@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday 🎉</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="start-stage" class="stage active">
+    <h2>Hi, i made something for you</h2>
+    <h2>I hope you like it😋</h2>
+    <button id="start-btn">🎉 Let's start! 🎉</button>
+  </div>
+
+  <div id="balloon-stage" class="stage">
+    <h2>Pop all the balloons 🎈</h2>
+    <div id="balloon-container"></div>
+  </div>
+
+  <div id="gift-stage" class="stage">
+    <h2>Choose your gift 🎁</h2>
+    <div id="gift-container"></div>
+  </div>
+
+  <div id="cake-stage" class="stage">
+    <div class="cake">
+      <div class="plate"></div>
+      <div class="layer layer-bottom"></div>
+      <div class="layer layer-middle"></div>
+      <div class="layer layer-top"></div>
+      <div class="icing"></div>
+      <div class="drip drip1"></div>
+      <div class="drip drip2"></div>
+      <div class="drip drip3"></div>
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+    </div>
+    <button id="blow-btn">Blow the candle</button>
+  </div>
+
+  <div id="slideshow-stage" class="stage">
+    <div id="slideshow"></div>
+    <p id="caption"></p>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="assets/audio/background.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="pop-sound">
+    <source src="assets/audio/pop.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="confetti-sound">
+    <source src="assets/audio/confetti.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="cheers-sound">
+    <source src="assets/audio/cheer.mp3" type="audio/mpeg">
+  </audio>
+  <canvas id="confetti-canvas"></canvas>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

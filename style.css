@@ -1,0 +1,244 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #222;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.stage {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stage.active {
+  display: flex;
+}
+
+button {
+  background: #ff4081;
+  color: white;
+  font-size: 20px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#balloon-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.balloon {
+  width: 60px;
+  height: 80px;
+  border-radius: 50% 50% 50% 50%;
+  position: absolute;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  width: 2px;
+  height: 40px;
+  background: white;
+}
+
+
+.red {
+  background: radial-gradient(circle at 30% 30%, #ff7b7b, #d60000);
+}
+
+.blue {
+  background: radial-gradient(circle at 30% 30%, #7bd2ff, #0073d6);
+}
+
+.green {
+  background: radial-gradient(circle at 30% 30%, #91ff7b, #0d8b00);
+}
+
+.yellow {
+  background: radial-gradient(circle at 30% 30%, #fff07b, #d6b800);
+}
+
+.purple {
+  background: radial-gradient(circle at 30% 30%, #d27bff, #6a00d6);
+}
+
+.orange {
+  background: radial-gradient(circle at 30% 30%, #ffd37b, #ff8000);
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+
+  50% {
+    transform: translateX(10px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+#gift-container {
+  display: flex;
+  gap: 20px;
+}
+
+.gift {
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  border: 4px solid white;
+  border-radius: 12px;
+  transition: transform 0.2s;
+  background-color: #ff4081;
+}
+
+
+.gift:hover {
+  transform: scale(1.1);
+}
+
+
+.cake {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  margin: 20px auto;
+}
+
+.plate {
+  width: 270px;
+  height: 110px;
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.layer {
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  border-radius: 50%;
+  background: #553c13;
+}
+
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+
+.layer-top {
+  top: 0;
+}
+
+.layer-middle {
+  top: 33px;
+}
+
+.layer-bottom {
+  top: 66px;
+}
+
+.icing {
+  top: 2px;
+  left: 5px;
+  background: #f0e4d0;
+  width: 240px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.drip {
+  position: absolute;
+  background: #f0e4d0;
+}
+
+.drip1 {
+  top: 53px;
+  left: 5px;
+  width: 40px;
+  height: 48px;
+  border-radius: 0 0 25px 25px;
+}
+
+.drip2 {
+  top: 69px;
+  left: 181px;
+  width: 50px;
+  height: 60px;
+  border-radius: 0 0 25px 25px;
+}
+
+.drip3 {
+  top: 54px;
+  left: 90px;
+  width: 80px;
+  height: 60px;
+  border-radius: 0 0 40px 40px;
+}
+
+.candle {
+  background: #7b020b;
+  width: 16px;
+  height: 50px;
+  border-radius: 8px/4px;
+  top: -20px;
+  left: 50%;
+  margin-left: -8px;
+  position: absolute;
+}
+
+.flame {
+  position: absolute;
+  background: orange;
+  width: 15px;
+  height: 35px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: -34px;
+  left: 50%;
+  margin-left: -7.5px;
+  box-shadow: 0 0 20px orange;
+  animation: flicker 1s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    transform: skewX(5deg);
+  }
+
+  50% {
+    transform: skewX(-5deg);
+  }
+
+  100% {
+    transform: skewX(5deg);
+  }
+}
