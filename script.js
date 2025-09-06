@@ -142,11 +142,14 @@ function spawnBalloons() {
     }
     animate();
 
-    b.addEventListener("click", () => {
-      popped++;
-      popSound.play();
-      b.remove();
+    ["click", "touchstart"].forEach(eventType => {
+      b.addEventListener(eventType, () => {
+        popped++;
+        popSound.play();
+        b.remove();
+      }, { once: true }); 
     });
+
 
   }, 800);
 }
@@ -179,7 +182,7 @@ function showGifts() {
 
     g.addEventListener("click", () => {
       if (i === correctIndex) {
-        showCake(); 
+        showCake();
       } else {
         const funnyIndex = i < correctIndex ? i : i - 1;
         g.style.backgroundImage = `url('${funnyImages[funnyIndex]}')`;

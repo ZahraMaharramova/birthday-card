@@ -45,6 +45,7 @@ button {
   position: absolute;
   cursor: pointer;
   animation: float 3s ease-in-out infinite;
+  pointer-events: auto;
 }
 
 .balloon::after {
