@@ -190,10 +190,15 @@ button {
 
 #gift-container {
   display: flex;
+  flex-wrap: nowrap;  
+  justify-content: center;
   gap: 20px;
+  overflow-x: auto;     
+  -webkit-overflow-scrolling: touch; 
 }
 
 .gift {
+  flex: 0 0 auto;      
   width: 120px;
   height: 120px;
   cursor: pointer;
