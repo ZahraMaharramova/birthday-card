@@ -92,7 +92,12 @@ function showGifts() {
     "assets/images/funny4.jpeg"
   ];
 
-  const correctIndex = Math.floor(Math.random() * 5);
+  let shuffledFunny = [...funnyImages].sort(() => Math.random() - 0.5);
+  let selectedFunny = shuffledFunny.slice(0, 4);
+
+  let gifts = [...selectedFunny, "correct"];
+
+  gifts = gifts.sort(() => Math.random() - 0.5);
 
   for (let i = 0; i < 5; i++) {
     const g = document.createElement("div");
@@ -100,13 +105,12 @@ function showGifts() {
     g.style.backgroundImage = `url('${boxImages[i]}')`;
 
     g.addEventListener("click", () => {
-      if (i === correctIndex) {
+      if (gifts[i] === "correct") {
         showCake();
       } else {
         g.classList.add("shake");
         setTimeout(() => g.classList.remove("shake"), 500);
-        const funnyIndex = Math.min(i, funnyImages.length - 1);
-        g.style.backgroundImage = `url('${funnyImages[funnyIndex]}')`;
+        g.style.backgroundImage = `url('${gifts[i]}')`;
         g.style.pointerEvents = "none";
       }
     });
