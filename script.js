@@ -31,7 +31,7 @@ startBtn.addEventListener("click", () => {
 });
 
 let popped = 0;
-const requiredPops = 15;
+const requiredPops = 25;
 const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
 
 function spawnBalloons() {
@@ -47,7 +47,7 @@ function spawnBalloons() {
     b.style.left = Math.random() * 90 + "vw";
     balloonContainer.appendChild(b);
 
-    let duration = 6000 + Math.random() * 4000;
+    let duration = 4000 + Math.random() * 2000;
     let start = Date.now();
 
     function animate() {
@@ -70,7 +70,7 @@ function spawnBalloons() {
       }, { once: true });
     });
 
-  }, 800);
+  }, 500);
 }
 
 function showGifts() {
@@ -116,6 +116,8 @@ function showGifts() {
 }
 
 blowBtn.addEventListener("click", () => {
+  blowBtn.style.display = "none";
+  blowBtn.disabled = true;
   document.querySelector(".flame").style.display = "none";
   confettiSound.play();
   cheersSound.play();
