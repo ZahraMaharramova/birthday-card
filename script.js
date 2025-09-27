@@ -94,6 +94,10 @@ function showGifts() {
 
   const correctIndex = Math.floor(Math.random() * 5);
 
+  const shuffledFunny = [...funnyImages].sort(() => Math.random() - 0.5);
+
+  let funnyCounter = 0;
+
   for (let i = 0; i < 5; i++) {
     const g = document.createElement("div");
     g.classList.add("gift");
@@ -105,8 +109,10 @@ function showGifts() {
       } else {
         g.classList.add("shake");
         setTimeout(() => g.classList.remove("shake"), 500);
-        const randomFunnyIndex = Math.floor(Math.random() * funnyImages.length);
-        g.style.backgroundImage = `url('${funnyImages[randomFunnyIndex]}')`;
+
+        g.style.backgroundImage = `url('${shuffledFunny[funnyCounter]}')`;
+        funnyCounter++;
+
         g.style.pointerEvents = "none";
       }
     });
